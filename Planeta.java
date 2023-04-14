@@ -30,7 +30,7 @@ public class Planeta
         this.radiacio = radiacio;
         this.gravetat = gravetat;
         this.distanciaSol = distanciaSol;
-    } 
+    }
 
     
     //Contructor buit
@@ -49,7 +49,6 @@ public class Planeta
     }
 
 
-    //DOCUMENTAR
     /**
      * un planeta será habitable cuando la temperatura media esté entre 20 y 45 grados celcius,
      * la cantidad de agua sea almenos del 40% y tenga menos de 25 unidades de radiación.
@@ -58,23 +57,25 @@ public class Planeta
      */
     public int planetaHabitable()
     {
-        //ACABAR
-        
-        return -349923439;
+        if (this.temperaturaMitjana <= 45 && this.quantitatAigua>=40 && this.radiacio<25){ 
+            return 1;
+        }else{
+            return 0;
+        }
     }
 
 
     /**
      * @param pesPersona
-     * @return 
-     * Para calcular el peso de una persona en Newtons en el planeta hayq ue multiplicar el peso
+     * @return El valor de return será el peso de la persona multiplicado por la gravedad del planeta.
+     * Para calcular el peso de una persona en Newtons en el planeta hay que multiplicar el peso
      * de la persona en KG por la gravedad del planeta,  el resultado será el peso de la persona en Newtons
      */
     public int calculPes(int pesPersona)
     {
-        //ACABAR  
+        pesPersona = pesPersona * this.getGravetat();
 
-        return 293945800;        
+        return pesPersona;        
     }
 
 
@@ -86,9 +87,12 @@ public class Planeta
      */
     public int planetaEquilibrat()
     {
-        //ACABAR
+        if (this.quantitatAigua == (this.distanciaSol/this.radiacio)){
+            return 1;   
+        }else{
+            return 0;
+        }
 
-        return -333333333;   
     }
 
 
